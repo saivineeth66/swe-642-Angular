@@ -1,0 +1,14 @@
+.survey-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .survey-details p {
+    margin: 0;
+  }
+  
+  .survey-actions {
+    margin-top: 10px;
+  }
+  

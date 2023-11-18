@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</head>
+
+  
+<div *ngFor="let survey of surveys; let i = index" class="survey-item">
+    <div class="survey-details">
+      <p><strong>User Name:</strong> {{ survey.userName }}</p>
+      <p><strong>Email:</strong> {{ survey.email }}</p>
+      <p><strong>City:</strong> {{ survey.city }}</p>
+      <!-- Add more details as needed -->
+    </div>
+    <div class="survey-actions">
+      <button (click)="editSurvey(survey)" class="btn btn-primary">Edit</button>
+      <button (click)="deleteSurvey(survey.id)" class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+  
