@@ -6,18 +6,33 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
   
 <div *ngFor="let survey of surveys; let i = index" class="survey-item">
     <div class="survey-details">
+        <p><strong>Survey Id:</strong> {{ survey.id }}</p>
       <p><strong>User Name:</strong> {{ survey.userName }}</p>
-      <p><strong>Email:</strong> {{ survey.email }}</p>
+      <p><strong>Street Address:</strong> {{ survey.streetAddress }}</p>
       <p><strong>City:</strong> {{ survey.city }}</p>
-      <!-- Add more details as needed -->
+      <p><strong>State:</strong> {{ survey.state }}</p>
+      <p><strong>Zip Code:</strong> {{ survey.zipCode }}</p>
+      <p><strong>Email:</strong> {{ survey.email }}</p>
+      <p><strong>Phone Number:</strong> {{ survey.phoneNumber }}</p>
+      <p><strong>Date of Survey:</strong> {{ survey.dateOfSurvey | date }}</p>
+      <p><strong>URL:</strong> {{ survey.url }}</p>
+      <!-- <div *ngFor="let aspect of aspectLabels">
+        <p><strong>{{ aspect }}:</strong> {{ survey[aspect] ? 'Yes' : 'No' }}</p>
+      </div> -->
+      <p><strong>Interest:</strong> {{ survey.interest }}</p>
+      <p><strong>Graduation Month:</strong> {{ survey.graduationMonth }}</p>
+      <p><strong>Graduation Year:</strong> {{ survey.graduationYear }}</p>
+      <p><strong>Likelihood to Recommend:</strong> {{ survey.likelihoodToRecommend }}</p>
+      <p><strong>Comments:</strong> {{ survey.comments }}</p>
     </div>
     <div class="survey-actions">
-      <button (click)="editSurvey(survey)" class="btn btn-primary">Edit</button>
+        <button (click)="editSurvey(survey.id)" class="btn btn-primary">Edit</button>
       <button (click)="deleteSurvey(survey.id)" class="btn btn-danger">Delete</button>
     </div>
   </div>

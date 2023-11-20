@@ -8,6 +8,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SurveyListComponent } from './survey-list/survey-list.component';
 import { SurveyService } from './services/survey-service';
+import { SurveyEditComponent } from './survey-edit/survey-edit.component';
 // Import other components and services here
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SurveyService } from './services/survey-service';
     AppComponent,
     SurveyFormComponent,
     LandingPageComponent,
-    SurveyListComponent
+    SurveyListComponent,
+    SurveyEditComponent
     // Declare other components here
   ],
   imports: [

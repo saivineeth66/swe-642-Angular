@@ -21,8 +21,18 @@ export class SurveyService {
   deleteSurvey(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/delete/${id}`);
   }
-  editSurvey(id: number, surveyData: StudentSurvey): Observable<StudentSurvey> {
+//   editSurvey(id: number, surveyData: StudentSurvey): Observable<StudentSurvey> {
+//     return this.http.put<StudentSurvey>(`${this.apiUrl}/update/${id}`, surveyData);
+//   }
+  // survey-service.ts
+
+getSurvey(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+  
+  updateSurvey(id: number, surveyData: any): Observable<any> {
     return this.http.put<StudentSurvey>(`${this.apiUrl}/update/${id}`, surveyData);
   }
+  
   
 }

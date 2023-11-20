@@ -19,7 +19,7 @@ export class SurveyFormComponent {
     'Sports',
   ];
   interestOptions: string[] = ['Internet', 'Other', 'Friends', 'Television'];
-
+  submissionMessage: string = '';
 
   surveyForm = new FormGroup({
     userName: new FormControl('', Validators.required),
@@ -63,12 +63,15 @@ export class SurveyFormComponent {
     this.surveyService.addSurvey(this.surveyForm.value).subscribe({
       next: (response) => {
         console.log('Survey submitted successfully', response);
-        this.router.navigate(['/success'])
+       // this.router.navigate(['/success'])
+       this.submissionMessage = 'Survey submitted successfully!';
+        // Optionally navigate away after a delay
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 3000); //
       },
       error: (error) => {
-        console.log('Error status:', error.status); // Check the status code
-  console.log('Error response:', error.error); 
-        console.error('Error submitting survey', error);
+        this.submissionMessage = 'Failed to submit the survey. Please try again.';
       },
     });
   }

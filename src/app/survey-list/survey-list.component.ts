@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SurveyService } from '../services/survey-service';
 import { StudentSurvey } from '../models/student-survey.model'; // Adjust the import path as necessary
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,7 +13,8 @@ import { StudentSurvey } from '../models/student-survey.model'; // Adjust the im
 export class SurveyListComponent implements OnInit {
   surveys: StudentSurvey[] = [];
 
-  constructor(private surveyService: SurveyService) {}
+  constructor(private surveyService: SurveyService, private router: Router) {}
+
 
   ngOnInit() {
     this.surveyService.getSurveys().subscribe(
@@ -23,16 +26,8 @@ export class SurveyListComponent implements OnInit {
       }
     );
   }
-  editSurvey(survey: StudentSurvey) {
-    this.surveyService.editSurvey(survey.id, survey).subscribe({
-      next: (updatedSurvey) => {
-        console.log('Survey updated successfully', updatedSurvey);
-        // Update the local survey list or re-fetch the surveys
-      },
-      error: (error) => {
-        console.error('Error updating survey', error);
-      }
-    });
+  editSurvey(id: number): void {
+    this.router.navigate(['/edit-survey', id]);
   }
   
  deleteSurvey(id: number) {
