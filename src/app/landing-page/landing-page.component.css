@@ -1,20 +1,30 @@
-/* Landing page container */
-.landing-container {
+body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f7f7f7;
-    text-align: center;
-    padding: 20px;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #f7f7f7; /* Background color for the page */
   }
+  
+  /* Landing page container */
+  .landing-container {
+    width: 50%; /* Set a width for the card */
+    max-width: 600px; /* Maximum width of the card */
+    margin: auto; /* Center the card horizontally */
+    background-color: #fff; /* Card background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow for depth */
+    border-radius: 10px; /* Rounded corners for the card */
+    padding: 40px; /* Spacing inside the card */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+  }
+  
   
   /* Welcome heading */
   .landing-container h1 {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* Increase margin to separate from buttons */
   }
   
   /* Buttons */
@@ -25,24 +35,31 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease; /* Change to background-color for transition */
+  }
+  /* Adjust the image size and make it centered inside the .mason div */
+.mason img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Block level for applying margin */
+    margin: 0 auto 20px; /* Center the image and add space below */
   }
   
   /* Primary button */
   .landing-container .btn-primary {
-    background-color: #0056b3;
+    background-color: #006633;
     color: #fff;
   }
   
   /* Secondary button */
   .landing-container .btn-secondary {
-    background-color: #6c757d;
+    background-color:  #FFCC33;
     color: #fff;
   }
   
   /* Button hover effects */
   .landing-container .btn:hover {
-    opacity: 0.8;
+    background-color: darken(#006633, 10%); /* Slightly darken the button on hover */
   }
   
   /* Button focus effects */
@@ -53,6 +70,10 @@
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
+    .landing-container {
+      width: 80%; /* Increase width for smaller devices */
+    }
+  
     .landing-container h1 {
       font-size: 2rem;
     }
