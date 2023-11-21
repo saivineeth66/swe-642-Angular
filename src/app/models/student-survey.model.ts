@@ -1,4 +1,5 @@
 export interface StudentSurvey {
+  [key: string]: any; 
   id: number;
   userName: string;
   streetAddress: string;

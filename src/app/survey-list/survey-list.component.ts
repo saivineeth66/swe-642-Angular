@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SurveyListComponent implements OnInit {
   surveys: StudentSurvey[] = [];
+  aspectLabels: string[] = ['campus', 'atmosphere', 'dormRooms', 'students', 'Location', 'Sports'];
 
   constructor(private surveyService: SurveyService, private router: Router) {}
 
@@ -33,7 +34,6 @@ export class SurveyListComponent implements OnInit {
  deleteSurvey(id: number) {
     if (confirm('Are you sure you want to delete this survey?')) {
       this.surveyService.deleteSurvey(id).subscribe(() => {
-        // Remove the deleted survey from the list or reload the list
         this.surveyService.getSurveys()
       }, error => {
         console.error('Error deleting survey', error);

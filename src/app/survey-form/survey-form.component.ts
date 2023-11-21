@@ -11,12 +11,12 @@ import { Router } from '@angular/router';
 })
 export class SurveyFormComponent {
   aspectLabels: string[] = [
-    'Campus',
-    'Atmosphere',
-    'DormRooms',
-    'Students',
-    'Location',
-    'Sports',
+    'campus',
+    'atmosphere',
+    'dormRooms',
+    'students',
+    'location',
+    'sports',
   ];
   interestOptions: string[] = ['Internet', 'Other', 'Friends', 'Television'];
   submissionMessage: string = '';
@@ -37,14 +37,13 @@ export class SurveyFormComponent {
     ]),
     dateOfSurvey: new FormControl('', Validators.required),
     url: new FormControl('', Validators.required),
-    aspects: new FormGroup({
-      Campus: new FormControl(false),
-      Atmosphere: new FormControl(false),
-      DormRooms: new FormControl(false),
-      Students: new FormControl(false),
-      Location: new FormControl(false),
-      Sports: new FormControl(false),
-    }),
+
+      campus: new FormControl(false),
+      atmosphere: new FormControl(false),
+      dormRooms: new FormControl(false),
+      students: new FormControl(false),
+      location: new FormControl(false),
+      sports: new FormControl(false),
     interest: new FormControl('', Validators.required),
     graduationMonth: new FormControl('', Validators.required),
     graduationYear: new FormControl('', [

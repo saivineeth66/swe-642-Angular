@@ -22,9 +22,9 @@
       <p><strong>Phone Number:</strong> {{ survey.phoneNumber }}</p>
       <p><strong>Date of Survey:</strong> {{ survey.dateOfSurvey | date }}</p>
       <p><strong>URL:</strong> {{ survey.url }}</p>
-      <!-- <div *ngFor="let aspect of aspectLabels">
+      <div *ngFor="let aspect of aspectLabels">
         <p><strong>{{ aspect }}:</strong> {{ survey[aspect] ? 'Yes' : 'No' }}</p>
-      </div> -->
+      </div>
       <p><strong>Interest:</strong> {{ survey.interest }}</p>
       <p><strong>Graduation Month:</strong> {{ survey.graduationMonth }}</p>
       <p><strong>Graduation Year:</strong> {{ survey.graduationYear }}</p>
@@ -33,7 +33,7 @@
     </div>
     <div class="survey-actions">
         <button (click)="editSurvey(survey.id)" class="btn btn-primary">Edit</button>
-      <button (click)="deleteSurvey(survey.id)" class="btn btn-secondary">Delete</button>
+      <button (click)="deleteSurvey(survey.id)" class="btn btn-secodary">Delete</button>
     </div>
   </div>
   
