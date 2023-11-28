@@ -74,4 +74,8 @@ export class SurveyFormComponent {
       },
     });
   }
+  cancel(): void {
+    this.surveyForm.reset();
+  }
+  
 }

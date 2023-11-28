@@ -73,6 +73,10 @@ select.form-control:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.5);
 }
 
+.btn-secondary{
+  background-color: red;
+}
+
 .btn-primary {
     background-color: #006633;
     border: none;

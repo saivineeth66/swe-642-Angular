@@ -34,7 +34,7 @@ export class SurveyListComponent implements OnInit {
  deleteSurvey(id: number) {
     if (confirm('Are you sure you want to delete this survey?')) {
       this.surveyService.deleteSurvey(id).subscribe(() => {
-        this.surveyService.getSurveys()
+        this.surveys = this.surveys.filter(survey => survey.id !== id);
       }, error => {
         console.error('Error deleting survey', error);
       });
